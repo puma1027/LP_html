@@ -8,6 +8,10 @@
     src: url(../font/Hiragino_Kakugo_ProN_W3.otf);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Hiragino Kaku Gothic W6";
     line-height: 1.5;
@@ -68,6 +72,10 @@ a:hover {
     font-size: 14px;
 }
 
+.font-w3 {
+    font-family: "Hiragino Kaku Gothic W3";
+}
+
 .text-underline {
     text-decoration: underline;
 }
@@ -79,7 +87,7 @@ a:hover {
 .main-visual {
     background: url(../image/main-visual.jpg) center center no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 75vh;
 }
 
 header h3 {
@@ -97,6 +105,7 @@ header h3 {
     padding: 15px;
     width: 100%;
     text-align: center;
+    border-radius: 2px;
 }
 
 .feeling-box-title {
@@ -106,6 +115,7 @@ header h3 {
     top: -17px;
     left: 50%;
     transform: translate(-50%);
+    font-family: 'Hiragino Kaku Gothic W3';
 }
 
 .feeling-box {
@@ -142,7 +152,7 @@ header h3 {
 }
 
 .info-box {
-    border: 1px solid #000;
+    background: #F4F4F4;
     padding: 20px 30px;
 }
 
@@ -186,7 +196,7 @@ header h3 {
 .favorite-img {
     background: url(../image/favorite-img.jpg) center no-repeat;
     background-size: cover;
-    height: 1000px;
+    height: 550px;
 }
 
 .favorite p {
@@ -212,7 +222,7 @@ header h3 {
 }
 
 .achievement .card-box p:nth-child(2) {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.7;
 }
 
@@ -284,10 +294,6 @@ header h3 {
     line-height: 1.7;
 }
 
-.deliciousness img {
-    width: 100px;
-}
-
 .service-coupon-tag {
     background: #E6E6E6;
 }
@@ -310,23 +316,70 @@ header h3 {
     padding: 15px 5px;
     width: 100%;
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #707070;
     text-align: left;
     outline: none;
     transition: 0.4s;
 }
 
 .panel {
-    padding: 15px;
-    display: none;
-    background-color: white;
+    padding: 0 15px;
     overflow: hidden;
     line-height: 1.7;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel p {
+    padding: 10px 0;
+}
+
+.accordion:after {
+    content: '>';
+    font-family: fangsong;
+    font-weight: bold;
+    font-size: 13px;
+    color: #707070;
+    float: right;
+    margin-left: 5px;
+    transform: rotate(90deg);
+}
+
+.active:after {
+    content: '<';
+    font-family: fangsong;
+    font-weight: bold;
+    transform: rotate(90deg);
 }
 
 .faq .start-btn {
     width: 500px;
     margin: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: grey;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 30px;
+}
+
+.bottom-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+}
+
+footer {
+    margin-bottom: 100px;
 }
 
 @media (max-width: 1200px) {
@@ -342,7 +395,7 @@ header h3 {
         top: 20px;
     }
     .photos .bottom-photos img {
-        height: 350px;
+        height: 300px;
     }
 }
 
@@ -362,7 +415,7 @@ header h3 {
         width: 80%;
     }
     .photos .bottom-photos img {
-        height: 250px;
+        height: 200px;
     }
 }
 
@@ -415,6 +468,7 @@ header h3 {
     }
     .feeling img {
         width: 100px;
+        padding-bottom: 6px;
     }
     .feeling-box-title {
         top: -15px;
@@ -471,6 +525,9 @@ header h3 {
     }
     .faq .start-btn {
         width: 100%;
+    }
+    .deliciousness img {
+        width: 100px;
     }
 }
 
