@@ -111,7 +111,7 @@ header h3 {
 .feeling-box-title {
     background: #fff;
     padding: 5px 20px;
-    width: 120px;
+    width: 150px;
     top: -17px;
     left: 50%;
     transform: translate(-50%);
@@ -472,6 +472,7 @@ footer {
     }
     .feeling-box-title {
         top: -15px;
+        width: 120px;
     }
     .feeling-box {
         width: 100%;
